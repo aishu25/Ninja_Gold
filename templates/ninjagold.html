@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='ninja.css') }}">
+	<title>Ninja Gold</title>
+</head>
+	<body>
+		<p id="title1">Welcome to Ninja Gold Game... Let's Play !!!</p>
+		<div id="wrapper">
+			<div id="gold">
+				<div id="gold_title">Your Gold</div>
+				<div id="amount">{{ session["gold"] }}</div>
+				<form action="/restart" method="post">
+						<input type="hidden" name="restart" value="Restart">
+						<input type="submit" value="Restart">
+				</form>
+			</div>
+			<div id="location">
+				<div class="places">
+					<h3>Farm</h3>
+					<p>(earn 10-20 gold!)</p>
+					<form action="/process_money" method="post">
+						<input type="hidden" name="building" value="Farm">
+						<input type="submit" value="Find Gold">
+					</form>
+				</div>
+				<div class="places">
+					<h3>Cave</h3>
+					<p>(earn 5-10 gold!)</p>
+					<form action="/process_money" method="post">
+						<input type="hidden" name="building" value="Cave">
+						<input type="submit" value="Find Gold">
+					</form>
+				</div>
+				<div class="places">
+					<h3>House</h3>
+					<p>(earn 2-5 gold!)</p>
+					<form action="/process_money" method="post">
+						<input type="hidden" name="building" value="House">
+						<input type="submit" value="Find Gold">
+					</form>
+				</div>
+				<div class="places">
+					<h3>Casino</h3>
+					<p>(earn/lose 0-50 gold!)</p>
+					<form action="/process_money" method="post">
+						<input type="hidden" name="building" value="Casino">
+						<input type="submit" value="Find Gold">
+					</form>
+				</div>
+			</div>
+			<h4>Activity LOG:</h4>
+			<div id="activity">
+				<div id="activity_log">
+					{% for x,y in session["activities"] %}
+					<p>	{{ y }} </p>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+        var activityDiv = document.getElementById("activity");
+        activityDiv.scrollTop = activityDiv.scrollHeight;
+    </script>
+</html>

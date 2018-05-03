@@ -1,0 +1,70 @@
+*{
+	margin:  0px;
+	padding: 0px;
+}
+#wrapper{
+	display: block;
+	border: 2px solid black;
+	font-family: Comic Sans MS, Helvetica, sans-serif;
+	padding: 10px;
+	margin: 20px;
+	background-color: lightseagreen;
+}
+#title1{
+	padding: 20px;
+	font-family: Comic Sans MS, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size:26px; 
+}
+input[type=submit]{
+	background-color: blue;
+    color: white;
+    margin: 10px 40px;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 5px;
+}
+
+#gold{
+	display: block;
+}
+#gold_title{
+	display: inline-block;
+	margin: 20px;
+	font-weight: bold;
+	font-size:18px; 
+}
+#amount{
+	border: 1px solid black;
+	display: inline-block;
+	width: 200px;
+	height: 20px ;
+	padding: 5px;
+}
+#location{
+	display: block;
+}
+.places{
+	display: inline-block;
+    border: 1px solid black;
+    width: 200px;
+    height: 100px;
+    margin: 20px;
+    padding: 20px;
+    background-color: lightsalmon;
+}
+.places form{
+	display: block;
+	/* border: 1px solid black; */
+}
+#activity{
+	display: block;
+	border: 1px solid black;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    max-height: 150px;
+    overflow-y: scroll;
+    background-color: lightsalmon;
+}
